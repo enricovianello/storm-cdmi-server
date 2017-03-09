@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: redis
+    
+server:
+  port: 8888
+
+rest:
+  user: restadmin
+  pass: restadmin
+
+oidc:
+  tokeninfo: https://iam-test.indigo-datacloud.eu/introspect
+  userinfo: https://iam-test.indigo-datacloud.eu/userinfo 
+  clientid: c5263cde-9467-49c6-ae52-9dd9c5d2430a
+  clientsecret: AK4vpplqfTZKfPcVHEHn-tmlHEZnc__aXS59Ol2nuzGdhpxvNIBReyZSu_2-2stVOsognZxLbsJiHV-KNO24CBA
+
+cdmi:
+  qos:
+    backend:
+      type: storm
+  data:
+    baseDirectory: /tmp/cdmi
+---
+spring:
+  profiles: redis
+  redis:
+    port: 6379
+    host: localhost
